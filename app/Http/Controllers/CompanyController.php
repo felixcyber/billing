@@ -89,7 +89,7 @@ class CompanyController extends Controller
         ]);
         Company::whereId($id)->update($validatedData);
 
-        return redirect('admin/companies')->with('success', 'Show is successfully updated');
+        return redirect('admin/companies')->with('success', 'Компанія '. $request -> title. ' відновлена');
     }
 
     /**
@@ -103,6 +103,6 @@ class CompanyController extends Controller
         $company = Company::findOrFail($id);
         $company->delete();
 
-        return redirect('admin/companies')->with('success', 'Show is successfully deleted');
+        return redirect('admin/companies')->with('success', 'Компанія '. $company -> title. ' видалена');
     }
 }
