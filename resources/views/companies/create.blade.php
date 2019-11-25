@@ -23,15 +23,15 @@
       <form method="post" action="{{ route('companies.store') }}">
           <div class="form-group">
               @csrf
-              <label for="name">Show Name:</label>
+              <label for="name">Найменування:</label>
               <input type="text" class="form-control" name="title"/>
           </div>
           <div class="form-group">
-              <label for="price">Show Genre :</label>
+              <label for="price">Опис:</label>
               <input type="text" class="form-control" name="description"/>
           </div>
           <div class="form-group">
-            <label for="price">Show Genre :</label>
+            <label for="price">Користувач:</label>
             <input type="number" class="form-control" name='user_id'/>
         </div>
 

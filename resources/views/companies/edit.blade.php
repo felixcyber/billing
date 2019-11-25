@@ -8,7 +8,7 @@
 </style>
 <div class="card uper">
   <div class="card-header">
-    Update companies
+    Змінити компанію
   </div>
   <div class="card-body">
     @if ($errors->any())
@@ -24,15 +24,15 @@
           <div class="form-group">
               @csrf
               @method('PATCH')
-              <label for="name">Company Name:</label>
+              <label for="name">Найменування:</label>
               <input type="text" class="form-control" name="title" value="{{ $company->title }}"/>
           </div>
           <div class="form-group">
-              <label for="price">Show Genre :</label>
+              <label for="price">Опис:</label>
               <input type="text" class="form-control" name="description" value="{{ $company->description }}"/>
           </div>
           <div class="form-group">
-              <label for="price">Юзер :</label>
+              <label for="price">Користувач:</label>
               <input type="text" class="form-control" name="user_id" value="{{ number_format($company->user_id, 0) }}"/>
           </div>
 
