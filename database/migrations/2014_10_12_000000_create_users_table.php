@@ -22,6 +22,7 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
             $table->boolean('is_admin')->nullable();
             $table->timestamps();
+            $table->integer('company_id');
         });
     }
 

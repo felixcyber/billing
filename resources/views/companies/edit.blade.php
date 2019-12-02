@@ -31,10 +31,10 @@
               <label for="price">Опис:</label>
               <input type="text" class="form-control" name="description" value="{{ $company->description }}"/>
           </div>
-          <div class="form-group">
+          {{-- <div class="form-group">
               <label for="price">Користувач:</label>
               <input type="text" class="form-control" name="user_id" value="{{ number_format($company->user_id, 0) }}"/>
-          </div>
+          </div> --}}
 
           <button type="submit" class="btn btn-primary">Відновити компанію</button>
       </form>

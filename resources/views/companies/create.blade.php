@@ -27,13 +27,13 @@
               <input type="text" class="form-control" name="title"/>
           </div>
           <div class="form-group">
-              <label for="price">Опис:</label>
+              <label for="description">Опис:</label>
               <input type="text" class="form-control" name="description"/>
           </div>
-          <div class="form-group">
+          {{-- <div class="form-group">
             <label for="price">Користувач:</label>
             <input type="number" class="form-control" name='user_id'/>
-        </div>
+        </div> --}}
 
           <button type="submit" class="btn btn-primary">Створити компанію</button>
       </form>

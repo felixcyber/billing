@@ -40,7 +40,6 @@ class CompanyController extends Controller
         $validatedData = $request->validate([
             'title' => 'required|max:50',
             'description' => 'required|max:255',
-            'user_id' => 'required|max:2',
 
         ]);
         $company = Company::create($validatedData);
@@ -84,7 +83,7 @@ class CompanyController extends Controller
         $validatedData = $request->validate([
             'title' => 'required|max:50',
             'description' => 'required|max:255',
-            'user_id' => 'required|max:2',
+            
 
         ]);
         Company::whereId($id)->update($validatedData);

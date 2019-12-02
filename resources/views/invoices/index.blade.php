@@ -15,26 +15,31 @@
   <table class="table table-striped">
     <thead>
         <tr>
-          <td>ID</td>
-          <td>Назва</td>
-          <td>Опис</td>
-          {{-- <td>User</td> --}}
+          <td>Номер</td>
+          <td>Дата</td>
+          <td>Сума 1</td>
+          <td>Компанія</td>
+
           <td>Редагувати</td>
           <td>Видалити</td>
 
         </tr>
     </thead>
     <tbody>
-        @foreach($companies as $company)
+        @foreach($invoices as $invoice)
         <tr>
-            <td>{{$company->id}}</td>
-            <td>{{$company->title}}</td>
-            <td>{{$company->description}}</td>
-            {{-- <td>{{number_format($company->user_id,0)}}</td> --}}
+            <td>{{$invoice->number}}</td>
+            <td>{{$invoice->date}}</td>
+            <td>{{$invoice->summ_1}}</td>
 
-            <td><a href="{{ route('companies.edit', $company->id)}}" class="btn btn-primary">Edit</a></td>
+
             <td>
-                <form action="{{ route('companies.destroy', $company->id)}}" method="post">
+                    {{ $invoice->company->title ?? '' }}
+            </td>
+
+            <td><a href="{{ route('invoices.edit', $invoice->id)}}" class="btn btn-primary">Редагувати</a></td>
+            <td>
+                <form action="{{ route('invoices.destroy', $invoice->id)}}" method="post">
                   @csrf
                   @method('DELETE')
                   <button class="btn btn-danger" type="submit">Delete</button>
