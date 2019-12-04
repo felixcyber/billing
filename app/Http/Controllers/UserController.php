@@ -10,6 +10,11 @@ use Hash;
 
 class UserController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -46,7 +51,7 @@ class UserController extends Controller
             $validatedData = $request->validate([
             'name' => 'required|max:50',
             'email' => 'required|email|unique:users',
-            'password' => 'required|confirmed',
+            'password' => 'required|min:6|confirmed',
             'company_id' => 'required|max:50',
             'is_admin' => 'nullable',
 
@@ -96,7 +101,7 @@ class UserController extends Controller
         $validatedData = $request->validate([
             'name' => 'required|max:50',
             'email' => 'required|email',
-            'password' => 'required|max:50',
+            'password' => 'required|min:6',
             'company_id' => 'required|max:50',
             'is_admin' => 'nullable',
         ]);

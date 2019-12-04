@@ -10,8 +10,10 @@
                 <div class="card-body">
                     @if(auth()->user()->is_admin == 1)
                         <a href="{{url('admin/companies')}}">Компанії</a>
+                        <a href="{{url('admin/users')}}">Користувачі</a>
+                        <a href="{{url('admin/invoices')}}">Рахунки</a>
                     @else
-                        <div class=”panel-heading”>Normal User</div>
+                        <div class=”panel-heading”>Не сотрудник</div>
                     @endif
                 </div>
             </div>
