@@ -11,6 +11,20 @@ class CreateInvoicesTable extends Migration
      *
      * @return void
      */
+    
+    /**
+        *balance_start
+        *consumption_volume
+        *tariff_estimated
+        *tariff_transmission
+        *tariff_distribution
+        *cost_consumption
+        *paid_summ
+        *consumption_actual 
+        *cost_actual
+        *balance_end
+    */    
+    
     public function up()
     {
         Schema::create('invoices', function (Blueprint $table) {
