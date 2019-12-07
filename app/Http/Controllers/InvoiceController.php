@@ -22,7 +22,7 @@ class InvoiceController extends Controller
     {
         $invoices = invoice::all();
 
-        return view('invoices/index', compact('invoices'));
+        return view('admin/invoices/index', compact('invoices'));
     }
 
     /**
@@ -33,7 +33,7 @@ class InvoiceController extends Controller
     public function create()
     {
         $companies = Company::all()->pluck('title', 'id');
-        return view('invoices/create', compact('companies'));
+        return view('admin/invoices/create', compact('companies'));
 
     }
 
@@ -81,7 +81,7 @@ class InvoiceController extends Controller
         $invoice = Invoice::findOrFail($id);
         $companies = Company::all()->pluck('title', 'id');
 
-        return view('invoices/edit', compact('invoice', 'companies'));
+        return view('admin/invoices/edit', compact('invoice', 'companies'));
     }
 
     /**

@@ -21,7 +21,7 @@ class CompanyController extends Controller
     {
         $companies = Company::all();
 
-     return view('companies/index', compact('companies'));
+     return view('admin/companies/index', compact('companies'));
     }
 
     /**
@@ -31,7 +31,7 @@ class CompanyController extends Controller
      */
     public function create()
     {
-        return view('companies/create');
+        return view('admin/companies/create');
     }
 
     /**
@@ -73,7 +73,7 @@ class CompanyController extends Controller
     {
         $company = Company::findOrFail($id);
 
-     return view('companies/edit', compact('company'));
+     return view('admin/companies/edit', compact('company'));
     }
 
     /**

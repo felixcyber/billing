@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\invoice;
+
 
 
 class HomeController extends Controller
@@ -25,9 +27,15 @@ class HomeController extends Controller
      */
     public function index()
     {
-        //return view('home');
+        // Получить текущего аутентифицированного пользователя...
         $user = Auth::user();
-        return view('home',compact('user'))->with("companies",$user);
+
+        $companyid = $user -> company_id;
+        //dd($companyid);
+        $invoices = invoice::where('company_id', $companyid)->get();
+
+        return view('home',compact('user', 'invoices'));
+
     }
 
     public function admin()

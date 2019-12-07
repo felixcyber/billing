@@ -24,7 +24,7 @@ class UserController extends Controller
     {
         $users = User::all();
 
-        return view('users/index', compact('users'));
+        return view('admin/users/index', compact('users'));
     }
 
     /**
@@ -35,7 +35,7 @@ class UserController extends Controller
     public function create()
     {
         $companies = Company::all()->pluck('title', 'id');
-        return view('users/create', compact('companies'));
+        return view('admin/users/create', compact('companies'));
 
     }
 
@@ -83,7 +83,7 @@ class UserController extends Controller
         $user = User::findOrFail($id);
         $companies = Company::all()->pluck('title', 'id');
 
-        return view('users/edit', compact('user', 'companies'));
+        return view('admin/users/edit', compact('user', 'companies'));
     }
 
     /**
