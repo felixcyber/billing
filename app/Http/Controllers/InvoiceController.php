@@ -34,7 +34,6 @@ class InvoiceController extends Controller
     {
         $companies = Company::all()->pluck('title', 'id');
         return view('admin/invoices/create', compact('companies'));
-
     }
 
     /**
@@ -46,14 +45,25 @@ class InvoiceController extends Controller
     public function store(Request $request)
     {
 
-            $validatedData = $request->validate([
+        $validatedData = $request->validate([
 
-            'date' => 'required',
-            'number' => 'required',
-            'summ_1' => 'required',
             'company_id' => 'required',
+            'date' => 'required',
+            'date_end' => 'required',
+            'number' => 'required',
 
-            ]);
+            'balance_start' => 'required',
+            'consumption_volume' => 'required',
+            'tariff_estimated' => 'required',
+            'tariff_transmission' => 'required',
+            'tariff_distribution' => 'required',
+            'consumption_cost' => 'required',
+            'paid_summ' => 'required',
+            'consumption_actual' => 'required',
+            'cost_actual' => 'required',
+            'balance_end' => 'required',
+
+        ]);
         $invoice = Invoice::create($validatedData);
         //dd($validatedData);
         return redirect('admin/invoices')->with('success', 'Рахунок збережений');
@@ -97,16 +107,27 @@ class InvoiceController extends Controller
         $validatedData = $request->validate([
 
             // 'date' => 'date_format:"Y-m-d"|required',
-            'date' => 'required',
-            'number' => 'required',
-            'summ_1' => 'required',
             'company_id' => 'required',
+            'date' => 'required',
+            'date_end' => 'required',
+            'number' => 'required',
 
-            ]);
+            'balance_start' => 'required',
+            'consumption_volume' => 'required',
+            'tariff_estimated' => 'required',
+            'tariff_transmission' => 'required',
+            'tariff_distribution' => 'required',
+            'consumption_cost' => 'required',
+            'paid_summ' => 'required',
+            'consumption_actual' => 'required',
+            'cost_actual' => 'required',
+            'balance_end' => 'required',
 
-           //dd($validatedData);
-           Invoice::whereId($id)->update($validatedData);
-        return redirect('admin/invoices')->with('success', 'Рахунок '. $request -> number. ' відновлен.');
+        ]);
+
+        //dd($validatedData);
+        Invoice::whereId($id)->update($validatedData);
+        return redirect('admin/invoices')->with('success', 'Рахунок ' . $request->number . ' відновлен.');
     }
 
     /**
@@ -120,6 +141,6 @@ class InvoiceController extends Controller
         $invoice = Invoice::findOrFail($id);
         $invoice->delete();
 
-        return redirect('admin/invoices')->with('success', 'Рахунок '. $invoice -> number. ' видалений');
+        return redirect('admin/invoices')->with('success', 'Рахунок ' . $invoice->number . ' видалений');
     }
 }

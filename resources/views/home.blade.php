@@ -1,117 +1,264 @@
-@extends('layouts.app')
+@extends('theme.default')
 
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Dashboard</div>
+        <div class="col-md-12">
+            <div class="card-body">
+                @if(auth()->user()->is_admin == 1)
 
-                <div class="card-body">
-                    @if(auth()->user()->is_admin == 1)
-                        <a href="{{url('admin/companies')}}">Компанії</a>
-                        <a href="{{url('admin/users')}}">Користувачі</a>
-                        <a href="{{url('admin/invoices')}}">Рахунки</a>
-                    @else
-                        <div class="card">
-                            @if (Auth::check())
-                                <div class="card-header">Tasks List</div>
+
+        <div class="container">
+                <div class="row justify-content-md-center">
+                  <div class="col col-lg-2">
+                    <span>1 of 3</span>
+                  </div>
+                  <div class="col-md-auto">
+                    <span>Variable width content</span>
+                  </div>
+                  <div class="col col-lg-2">
+                    <span>3 of 3</span>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <span>1 of 3</span>
+                  </div>
+                  <div class="col-md-auto">
+                    <span>Variable width content</span>
+                  </div>
+                  <div class="col col-lg-2">
+                    <span>3 of 3</span>
+                  </div>
+                </div>
+              </div>
+
+
+
+
+
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mb-0 text-gray-800">Cards</h1>
+                    </div>
+
+                    <div class="row">
+
+                        <!-- Earnings (Monthly) Card Example -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-primary shadow h-100 py-2">
                                 <div class="card-body">
-                                    <table class="table table-striped">
-                                        <thead>
-                                            <tr>
-                                                <th>ID</th>
-                                                <th>Дата</th>
-                                            </tr>
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                                Earnings (Monthly)</div>
 
-                                        </thead>
-                                    <tbody>
 
-                                    @foreach($invoices as $invoice)
-                                        <tr>
-                                            <td>
-                                                {{$invoice->number}}
-                                            </td>
-                                            <td>
-                                                {{$invoice->date}}
-                                            </td>
 
-                                        </tr>
-                                    @endforeach
-                                    </tbody>
-                                    </table>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">$40,000</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
                                 </div>
-                            @else
-                                <div class="card-body">
-                                    <h3>You need to log in. <a href="/login">Click here to login</a></h3>
-                                </div>
-                            @endif
+                            </div>
                         </div>
 
+                        <!-- Earnings (Monthly) Card Example -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-success shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                                Earnings (Annual)</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">$215,000</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Earnings (Monthly) Card Example -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-info shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Tasks
+                                            </div>
+                                            <div class="row no-gutters align-items-center">
+                                                <div class="col-auto">
+                                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">50%</div>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="progress progress-sm mr-2">
+                                                        <div class="progress-bar bg-info" role="progressbar"
+                                                            style="width: 50%" aria-valuenow="50" aria-valuemin="0"
+                                                            aria-valuemax="100"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pending Requests Card Example -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-warning shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                                Pending Requests</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-comments fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col-lg-6">
+
+                            <!-- Default Card Example -->
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    Default Card Example
+                                </div>
+                                <div class="card-body">
+                                    This card uses Bootstrap's default styling with no utility classes added. Global
+                                    styles are the only things modifying the look and feel of this default card example.
+                                </div>
+                            </div>
+
+                            <!-- Basic Card Example -->
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary">Basic Card Example</h6>
+                                </div>
+                                <div class="card-body">
+                                    The styling for this basic card example is created by using default Bootstrap
+                                    utility classes. By using utility classes, the style of the card component can be
+                                    easily modified with no need for any custom CSS!
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="col-lg-6">
+
+                            <!-- Dropdown Card Example -->
+                            <div class="card shadow mb-4">
+                                <!-- Card Header - Dropdown -->
+                                <div
+                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-primary">Dropdown Card Example</h6>
+                                    <div class="dropdown no-arrow">
+                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                                            aria-labelledby="dropdownMenuLink">
+                                            <div class="dropdown-header">Dropdown Header:</div>
+                                            <a class="dropdown-item" href="#">Action</a>
+                                            <a class="dropdown-item" href="#">Another action</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a class="dropdown-item" href="#">Something else here</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Card Body -->
+                                <div class="card-body">
+                                    Dropdown menus can be placed in the card header in order to extend the functionality
+                                    of a basic card. In this dropdown card example, the Font Awesome vertical ellipsis
+                                    icon in the card header can be clicked on in order to toggle a dropdown menu.
+                                </div>
+                            </div>
+
+                            <!-- Collapsable Card Example -->
+                            <div class="card shadow mb-4">
+                                <!-- Card Header - Accordion -->
+                                <a href="#collapseCardExample" class="d-block card-header py-3" data-toggle="collapse"
+                                    role="button" aria-expanded="true" aria-controls="collapseCardExample">
+                                    <h6 class="m-0 font-weight-bold text-primary">Collapsable Card Example</h6>
+                                </a>
+                                <!-- Card Content - Collapse -->
+                                <div class="collapse show" id="collapseCardExample">
+                                    <div class="card-body">
+                                        This is a collapsable card example using Bootstrap's built in collapse
+                                        functionality. <strong>Click on the card header</strong> to see the card body
+                                        collapse and expand!
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <!-- /.container-fluid -->
+
+                @else
+                <div class="card shadow mb-4">
+                    @if (Auth::check())
+                    <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold text-primary">Рахунки</h6>
+                    </div>
 
 
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                <thead>
+                                    <tr>
+                                        <th>Номер</th>
+                                        <th>Дата</th>
+                                    </tr>
 
+                                </thead>
+                                <tbody>
 
+                                    @foreach($invoices as $invoice)
+                                    <tr>
+                                        <td>
+                                            {{$invoice->number}}
+                                        </td>
+                                        <td>
+                                            {{$invoice->date}}
+                                        </td>
 
+                                    </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
 
-
-
+                    </div>
                     @endif
                 </div>
+                @endif
             </div>
+
         </div>
     </div>
 </div>
-
-
-
-
-
-{{-- <div class="card">
-    @if (Auth::check())
-        <div class="card-header">Tasks List</div>
-        <div class="card-body">
-            <a href="/task" class="btn btn-primary">Рахунки</a>
-            <table class="table mt-4">
-                <thead>
-                    <tr>
-                        <th colspan="2">Tasks</th>
-                        <th colspan="2">Tasks</th>
-                        <th colspan="2">Tasks</th>
-                    </tr>
-                </thead>
-            <tbody>
-            @foreach($user->invoices as $invoice)
-                <tr>
-                    <td>
-                        {{$invoice->number}}
-                    </td>
-                    <td>
-                        {{$invoice->summ_1}}
-                    </td>
-                    <td>
-                        {{$company->date}}
-                    </td>
-
-                    <td>
-
-                        <form action="/invoices/{{$invoice->id}}">
-                            <button type="submit" name="edit" class="btn btn-primary">Edit</button>
-                            <button type="submit" name="delete" formmethod="POST" class="btn btn-danger">Delete</button>
-                            {{ csrf_field() }}
-                        </form>
-                    </td>
-                </tr>
-
-
-            @endforeach
-            </tbody>
-            </table>
-        </div>
-    @else
-        <div class="card-body">
-            <h3>You need to log in. <a href="/login">Click here to login</a></h3>
-        </div>
-    @endif
-</div> --}}
 @endsection

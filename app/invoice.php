@@ -27,9 +27,21 @@ class invoice extends Model
 
     protected $fillable = [
         'date',
+        'date_end',
         'number',
-        'summ_1',
         'company_id',
+        'balance_start',
+        'consumption_volume',
+        'tariff_estimated',
+        'tariff_transmission',
+        'tariff_distribution',
+        'consumption_cost',
+        'paid_summ',
+        'consumption_actual',
+        'cost_actual',
+        'balance_end',
+
+
         'created_at',
         'updated_at',
         'deleted_at',

@@ -11,28 +11,39 @@ class CreateInvoicesTable extends Migration
      *
      * @return void
      */
-    
+
     /**
         *balance_start
         *consumption_volume
         *tariff_estimated
         *tariff_transmission
         *tariff_distribution
-        *cost_consumption
+        *consumption_cost
         *paid_summ
-        *consumption_actual 
+        *consumption_actual
         *cost_actual
         *balance_end
-    */    
-    
+    */
+
     public function up()
     {
         Schema::create('invoices', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->Integer('company_id');
             $table->string('number');
             $table->date('date');
-            $table->decimal('summ_1', 15, 2);
-            $table->Integer('company_id');
+            $table->date('date_end');
+            $table->decimal('balance_start', 15, 2);
+            $table->decimal('consumption_volume', 15, 3);
+            $table->decimal('tariff_estimated', 15, 2);
+            $table->decimal('tariff_transmission', 15, 2);
+            $table->decimal('tariff_distribution', 15, 2);
+            $table->decimal('consumption_cost', 15, 2);
+            $table->decimal('paid_summ', 15, 2);
+            $table->decimal('consumption_actual', 15, 2);
+            $table->decimal('cost_actual', 15, 2);
+            $table->decimal('balance_end', 15, 2);
+
             $table->timestamps();
         });
     }

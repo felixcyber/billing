@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('theme.default')
 
 @section('content')
 <style>
