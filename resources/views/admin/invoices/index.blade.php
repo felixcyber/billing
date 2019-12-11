@@ -14,12 +14,14 @@
     @endif
 
     <div class="card shadow mb-4">
-        {{-- <a class="btn btn-success" href="{{ route("invoices.create") }}">
-        Новий рахунок
-        </a> --}}
+
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Користувачі</h6>
+            <h6 class="m-0 font-weight-bold text-primary">Рахунки</h6>
+            <a class="btn btn-success" href="{{ route("invoices.create") }}">
+                Новий рахунок
+                </a>
         </div>
+
         {{-- <div class="card-header py-3">
             <h5 class="card-title">Рахунки</h5>
         </div> --}}
