@@ -23,12 +23,12 @@
 
             <div class="container">
                 <h2 class="uper">Новий рахунок</h2>
-                <div class="col-lg-12 well">
+                <div class="col-lg-12">
                     <div class="row">
                         <form>
                             <div class="col-sm-12 bg-light text-dark">
 
-                                <div class="form-group">
+                                <div class="form-group pt-3" >
                                     <label for="company_id">Компанія:</label>
                                     <select name="company_id" class="form-control" autofocus>
                                         <option value="">--- Виберіть компанію ---</option>
