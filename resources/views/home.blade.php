@@ -8,33 +8,30 @@
                 @if(auth()->user()->is_admin == 1)
 
 
-        <div class="container">
-                <div class="row justify-content-md-center">
-                  <div class="col col-lg-2">
-                    <span>1 of 3</span>
-                  </div>
-                  <div class="col-md-auto">
-                    <span>Variable width content</span>
-                  </div>
-                  <div class="col col-lg-2">
-                    <span>3 of 3</span>
-                  </div>
+                <div class="container">
+                    <div class="row justify-content-md-center">
+                        <div class="col col-lg-2">
+                            <span>1 of 3</span>
+                        </div>
+                        <div class="col-md-auto">
+                            <span>Variable width content</span>
+                        </div>
+                        <div class="col col-lg-2">
+                            <span>3 of 3</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <span>1 of 3</span>
+                        </div>
+                        <div class="col-md-auto">
+                            <span>Variable width content</span>
+                        </div>
+                        <div class="col col-lg-2">
+                            <span>3 of 3</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="row">
-                  <div class="col">
-                    <span>1 of 3</span>
-                  </div>
-                  <div class="col-md-auto">
-                    <span>Variable width content</span>
-                  </div>
-                  <div class="col col-lg-2">
-                    <span>3 of 3</span>
-                  </div>
-                </div>
-              </div>
-
-
-
 
 
                 <div class="container-fluid">
@@ -221,7 +218,7 @@
                 <div class="card shadow mb-4">
                     @if (Auth::check())
                     <div class="card-header py-3">
-                        <h6 class="m-0 font-weight-bold text-primary">Рахунки</h6>
+                        <h6 class="m-0 font-weight-bold text-primary">Дашборд</h6>
                     </div>
 
 

@@ -2,17 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\invoice;
 use Illuminate\Http\Request;
+use App\invoice;
 use App\Company;
+use Illuminate\Support\Facades\Auth;
 
 class InvoiceController extends Controller
 {
-
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
     /**
      * Display a listing of the resource.
      *
@@ -20,9 +16,14 @@ class InvoiceController extends Controller
      */
     public function index()
     {
-        $invoices = invoice::all();
+         // Получить текущего аутентифицированного пользователя...
+         $user = Auth::user();
 
-        return view('admin/invoices/index', compact('invoices'));
+         $companyid = $user -> company_id;
+         //dd($companyid);
+         $invoices = invoice::where('company_id', $companyid)->get();
+
+         return view('customer/invoices/index',compact('user', 'invoices'));
     }
 
     /**
@@ -32,8 +33,7 @@ class InvoiceController extends Controller
      */
     public function create()
     {
-        $companies = Company::all()->pluck('title', 'id');
-        return view('admin/invoices/create', compact('companies'));
+        //
     }
 
     /**
@@ -44,29 +44,7 @@ class InvoiceController extends Controller
      */
     public function store(Request $request)
     {
-
-        $validatedData = $request->validate([
-
-            'company_id' => 'required',
-            'date' => 'required',
-            'date_end' => 'required',
-            'number' => 'required',
-
-            'balance_start' => 'required',
-            'consumption_volume' => 'required',
-            'tariff_estimated' => 'required',
-            'tariff_transmission' => 'required',
-            'tariff_distribution' => 'required',
-            'consumption_cost' => 'required',
-            'paid_summ' => 'required',
-            'consumption_actual' => 'required',
-            'cost_actual' => 'required',
-            'balance_end' => 'required',
-
-        ]);
-        $invoice = Invoice::create($validatedData);
-        //dd($validatedData);
-        return redirect('admin/invoices')->with('success', 'Рахунок збережений');
+        //
     }
 
     /**
@@ -77,7 +55,11 @@ class InvoiceController extends Controller
      */
     public function show($id)
     {
-        //
+        //dd($id);
+        $invoice = Invoice::findOrFail($id);
+        $companies = Company::all()->pluck('title', 'id');
+
+        return view('customer/invoices/show', compact('invoice', 'companies'));
     }
 
     /**
@@ -88,10 +70,7 @@ class InvoiceController extends Controller
      */
     public function edit($id)
     {
-        $invoice = Invoice::findOrFail($id);
-        $companies = Company::all()->pluck('title', 'id');
-
-        return view('admin/invoices/edit', compact('invoice', 'companies'));
+        //
     }
 
     /**
@@ -103,31 +82,7 @@ class InvoiceController extends Controller
      */
     public function update(Request $request, $id)
     {
-
-        $validatedData = $request->validate([
-
-            // 'date' => 'date_format:"Y-m-d"|required',
-            'company_id' => 'required',
-            'date' => 'required',
-            'date_end' => 'required',
-            'number' => 'required',
-
-            'balance_start' => 'required',
-            'consumption_volume' => 'required',
-            'tariff_estimated' => 'required',
-            'tariff_transmission' => 'required',
-            'tariff_distribution' => 'required',
-            'consumption_cost' => 'required',
-            'paid_summ' => 'required',
-            'consumption_actual' => 'required',
-            'cost_actual' => 'required',
-            'balance_end' => 'required',
-
-        ]);
-
-        //dd($validatedData);
-        Invoice::whereId($id)->update($validatedData);
-        return redirect('admin/invoices')->with('success', 'Рахунок ' . $request->number . ' відновлен.');
+        //
     }
 
     /**
@@ -138,9 +93,6 @@ class InvoiceController extends Controller
      */
     public function destroy($id)
     {
-        $invoice = Invoice::findOrFail($id);
-        $invoice->delete();
-
-        return redirect('admin/invoices')->with('success', 'Рахунок ' . $invoice->number . ' видалений');
+        //
     }
 }

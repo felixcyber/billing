@@ -27,20 +27,20 @@
       Управління клієнтами
     </div>
 
-    <!-- Nav Item - Pages Collapse Menu -->
-    <li class="nav-item">
-      <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-        <i class="fas fa-user-cog"></i>
-        <span>Споживачі</span>
-      </a>
-      <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-        <div class="bg-white py-2 collapse-inner rounded">
-          <h6 class="collapse-header">Споживачі:</h6>
-          <a class="collapse-item" href="{{url('admin/companies')}}">Компанії</a>
-          <a class="collapse-item" href="{{url('admin/users')}}">Користувачі</a>
-        </div>
-      </div>
-    </li>
+<!-- Nav Item -  -->
+<li class="nav-item {{ (request()->is('admin/companies*')) ? 'active' : '' }}">
+
+        <a class="nav-link" href="{{url('admin/companies')}}">
+            <i class="far fa-building"></i>
+          <span>Компанії</span></a>
+      </li>
+      <!-- Nav Item -  -->
+    <li class="nav-item {{ (request()->is('admin/users*')) ? 'active' : '' }}">
+
+            <a class="nav-link" href="{{url('admin/users')}}">
+                <i class="fas fa-user-tie"></i>
+              <span>Користувачі</span></a>
+          </li>
 
 
     <!-- Divider -->
@@ -53,7 +53,8 @@
 
 
     <!-- Nav Item -  -->
-    <li class="nav-item">
+    <li class="nav-item {{ (request()->is('admin/invoices*')) ? 'active' : '' }}">
+
       <a class="nav-link" href="{{url('admin/invoices')}}">
         <i class="fas fa-file-invoice"></i>
         <span>Рахунки</span></a>

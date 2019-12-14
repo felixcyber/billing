@@ -22,17 +22,16 @@
     <!-- Divider -->
     <hr class="sidebar-divider">
 
-    
+
 
     <!-- Heading -->
     <div class="sidebar-heading">
       Документи
     </div>
 
-
     <!-- Nav Item -  -->
     <li class="nav-item">
-      <a class="nav-link" href="{{url('admin/invoices')}}">
+      <a class="nav-link" href="{{url('customer/invoices')}}">
         <i class="fas fa-fw fa-table"></i>
         <span>Рахунки</span></a>
     </li>

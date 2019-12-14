@@ -19,7 +19,12 @@ Route::get('/', function () {
 Auth::routes(['register' => false]);
 
 Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/customer/invoices', 'InvoiceController@index')->name('customer.invoices');
+//Route::get('/customer/invoices/show', 'InvoiceController@show')->name('customer.invoices.show');
 Route::get('/admin', 'HomeController@admin')->middleware('admin');
-Route::resource('admin/users', 'UserController')->middleware('admin');
-Route::resource('admin/companies', 'CompanyController')->middleware('admin');
-Route::resource('admin/invoices', 'InvoiceController')->middleware('admin');
+Route::resource('admin/users', 'admin\UserController')->middleware('admin');
+Route::resource('admin/companies', 'admin\CompanyController')->middleware('admin');
+Route::resource('admin/invoices', 'admin\InvoiceController')->middleware('admin');
+Route::resource('customer/invoices', 'InvoiceController', [
+    'as' => 'customer'
+]);

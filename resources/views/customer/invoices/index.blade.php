@@ -21,10 +21,8 @@
     <div class="card shadow mb-4">
 
         <div class="card-header py-3">
-            <h5 >Рахунки</h5>
-            <a class="btn btn-success" href="{{ route("invoices.create") }}">
-                Новий рахунок
-            </a>
+            <h5>Рахунки</h5>
+
         </div>
 
 
@@ -34,14 +32,14 @@
                 <table class="table table-responsive" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                            <td>Компанія</td>
-                            <td>Номер</td>
-                            <td>Дата</td>
-                            <td>Обсяг споживання</td>
-                            <td>Тариф</td>
-                            <td>Нараховано</td>
-                            <td>Сплачено</td>
-                            <td>Дії</td>
+                            <th>Компанія</th>
+                            <th>Номер</th>
+                            <th>Дата</th>
+                            <th>Обсяг споживання</th>
+                            <th>Тариф</th>
+                            <th>Нараховано</th>
+                            <th>Сплачено</th>
+                            <th>Дії</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -68,20 +66,11 @@
                             <td>
                                 <!-- Circle Buttons (Default) -->
 
-                                <a href="{{ route('invoices.edit', $invoice->id)}}" class="btn btn-success btn-circle"
-                                    data-toggle="tooltip" data-placement="top" title="Редагувати">
+                                <a href="{{ route('customer.invoices.show', $invoice->id)}}"
+                                    class="btn btn-success btn-circle" data-toggle="tooltip" data-placement="top"
+                                    title="Показати">
                                     <i class="fas fa-edit"></i>
                                 </a>
-                                <form action="{{ route('invoices.destroy', $invoice->id)}}" method="POST"
-                                    onsubmit="return confirm('Вы уверены?');" style="display: inline-block;">
-                                    @csrf
-                                    @method('DELETE')
-
-                                    <button type="submit" class="btn btn-danger btn-circle" data-toggle="tooltip"
-                                        data-placement="top" title="Видалити">
-                                        <i class="fas fa-trash"></i>
-                                    </button>
-                                </form>
 
                             </td>
 
@@ -92,6 +81,8 @@
                 </table>
             </div>
         </div>
+
+
     </div>
 </div>
 @endsection
