@@ -28,7 +28,7 @@ return [
     'register'                             => 'Регистрация',
     'remember_me'                          => 'Запомнить меня',
     'reset_password'                       => 'Сброс пароля',
-    'send_password'                        => 'Send Password Reset Link',
+    'send_password'                        => 'Отправить ссылку для сброса пароля',
     'save'                                 => 'Сохранить',
     'search'                               => 'Поиск',
     'searching'                            => 'Поиск',

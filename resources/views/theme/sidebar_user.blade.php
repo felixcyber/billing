@@ -4,9 +4,9 @@
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{url('/home')}}">
       <div class="sidebar-brand-icon rotate-n-15">
-        <i class="fas fa-laugh-wink"></i>
+        <i class="fas fa-toolbox"></i>
       </div>
-      <div class="sidebar-brand-text mx-3">Адмін-панель <sup>2020</sup></div>
+      <div class="sidebar-brand-text mx-3">Кабінет<sup>2.0</sup></div>
     </a>
 
     <!-- Divider -->

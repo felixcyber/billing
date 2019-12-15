@@ -33,12 +33,12 @@ class HomeController extends Controller
         $companyid = $user -> company_id;
         //dd($companyid);
         $invoices = invoice::where('company_id', $companyid)->get();
-
-        return view('home',compact('user', 'invoices'));
+$invoices_count = invoice::count('id');
+        return view('home',compact('user', 'invoices','invoices_count'));
 
     }
 
-    
+
 
     public function admin()
 
