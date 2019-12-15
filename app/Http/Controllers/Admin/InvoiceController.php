@@ -107,7 +107,7 @@ class InvoiceController extends Controller
 
         $validatedData = $request->validate([
 
-            // 'date' => 'date_format:"Y-m-d"|required',
+            
             'company_id' => 'required',
             'date' => 'required',
             'date_end' => 'required',

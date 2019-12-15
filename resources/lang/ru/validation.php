@@ -105,10 +105,16 @@ return [
     'custom'                         => [
         'attribute-name' => [
             'rule-name' => 'custom-message',
+            'number' => 'Номер рахунку',
         ],
     ],
     'reserved_word'                  => 'Поле :attribute содержит зарезервированное слово',
     'dont_allow_first_letter_number' => 'Первый символ поля \":input\" не может быть цифрой',
     'exceeds_maximum_number'         => 'Значение поля :attribute превышает максимальное число символов',
-    'attributes'                     => [],
+    'attributes'                     => [
+        'number' => 'Номер рахунку',
+
+
+
+    ],
 ];

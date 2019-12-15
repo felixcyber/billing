@@ -1,10 +1,21 @@
 <?php
 
 return [
-    'password' => 'Пароль должен быть не менее 6 символов и совпадать с подтверждением',
-    'reset'    => 'Ваш пароль сброшен',
-    'sent'     => 'Мы отправили Вам на почти ссылку для сброса пароля',
-    'token'    => 'Ключ для сброса пароля неверный',
-    'user'     => 'Мы не можем найти пользователя с таким имейл адресом',
-    'updated'  => 'Ваш пароль был изменён!',
+
+    /*
+    |--------------------------------------------------------------------------
+    | Password Reset Language Lines
+    |--------------------------------------------------------------------------
+    |
+    | The following language lines are the default lines which match reasons
+    | that are given by the password broker for a password update attempt
+    | has failed, such as for an invalid token or invalid new password.
+    |
+    */
+
+    'reset' => 'Ваш пароль скинуто!',
+    'sent' => 'Ми відправили на ваш e-mail посилання для скидання пароля!',
+    'token' => 'Тоекн для скидання пароля невірний.',
+    'user' => "Користувача не знайдено..",
+
 ];
