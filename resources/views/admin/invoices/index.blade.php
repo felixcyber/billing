@@ -8,7 +8,6 @@
 
     .font-10 {
         font-size: 10pt;
-        text-align: right;
     }
 </style>
 <div>
@@ -31,14 +30,14 @@
             <div class="card-body">
 
                 <div class="table-responsive-sm font-10">
-                    <table class="table table-striped" id="dataTable">
+                    <table class="table" id="dataTable">
                         <thead>
                             <tr>
                                 <th class="center">Компанія</th>
                                 <th class="center">Номер</th>
                                 <th class="center">Дата</th>
-                                <th class="center">Обсяг споживання</th>
-                                <th class="center">Тариф</th>
+                                {{-- <th class="center">Обсяг споживання</th> --}}
+                                {{-- <th class="center">Тариф</th> --}}
                                 <th class="center">Нараховано</th>
                                 <th class="center">Сплачено</th>
                                 <th class="center">Дії</th>
@@ -55,11 +54,11 @@
                                 <td>{{$invoice->date}}</td>
                                 {{-- <td>{{$invoice->date_end}}</td> --}}
                                 {{-- <td>{{$invoice->balance_start}}</td> --}}
-                                <td>{{$invoice->consumption_volume}}</td>
-                                <td>{{number_format($invoice->tariff_estimated, 2, ',', ' ')}}</td>
+                                {{-- <td>{{$invoice->consumption_volume}}</td> --}}
+                                {{-- <td>{{number_format($invoice->tariff_estimated, 2, ',', ' ')}}</td> --}}
                                 {{-- <td>{{$invoice->tariff_transmission}}</td> --}}
                                 {{-- <td>{{$invoice->tariff_distribution}}</td> --}}
-                                <td>{{$invoice->consumption_cost}}</td>
+                                <td>{{number_format($invoice->consumption_cost, 2, ',', ' ')}}</td>
                                 <td>{{number_format($invoice->paid_summ, 2, ',', ' ')}}</td>
                                 {{-- <td>{{$invoice->consumption_actual}}</td> --}}
                                 {{-- <td>{{$invoice->cost_actual}}</td> --}}
@@ -96,7 +95,7 @@
                 </div>
 
                 <!-- Итоги таблицы -->
-                <div class="row mt-5">
+                <!--<div class="row mt-5">
                     <div class="col-lg-4 col-sm-5">
 
                     </div>
@@ -108,13 +107,15 @@
                                     <td class="left">
                                         <strong>Сплачено</strong>
                                     </td>
-                                    <td class="right">{{ $invoice->sum('paid_summ')}}</td>
+                                    <td class="right">{{number_format($invoice->sum('paid_summ'), 2, ',', ' ')}}</td>
+
                                 </tr>
                                 <tr>
                                     <td class="left">
                                         <strong>Нараховано</strong>
                                     </td>
-                                    <td class="right">{{ $invoice->sum('consumption_cost')}}</td>
+                                    <td class="right">{{ number_format($invoice->sum('consumption_cost'), 2, ',', ' ')}}
+                                    </td>
                                 </tr>
 
                                 </tr>
@@ -123,10 +124,10 @@
 
                     </div>
 
-                </div>
+                </div>-->
 
             </div>
         </div>
     </div>
 </div>
-    @endsection
+@endsection
