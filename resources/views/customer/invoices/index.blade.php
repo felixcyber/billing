@@ -22,9 +22,8 @@
             <div class="card-header">
                 {{-- <strong>01/01/01/2018</strong>
             <span class="float-right"> <strong>Status:</strong> Pending</span> --}}
-                <a class="btn btn-success" href="{{ route("invoices.create") }}">
-                    Новий рахунок
-                </a>
+                {{-- <a class="btn btn-primary" href="{{ URL::previous() }}" role="button">Назад</a> --}}
+
 
             </div>
             <div class="card-body">
@@ -122,5 +121,3 @@
     </div>
 </div>
 @endsection
-
-

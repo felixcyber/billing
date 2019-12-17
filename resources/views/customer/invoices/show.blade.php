@@ -23,10 +23,10 @@
         <div class="container">
             <h2 class="uper">Перегляд рахунку </h2>
 
-            <div class="offset-xl-2 col-xl-8 col-lg-12 col-md-12 col-sm-12 col-12 padding">
+            <div class="offset-xl-2 col-xl-8 col-lg-12 col-md-12 col-sm-12 col-12">
                     <div class="card">
                         <div class="card-header p-4">
-                            <a class="pt-2 d-inline-block" href="index.html" data-abc="true">Feli.co.ua</a>
+                            <a class="btn btn-primary" href="{{ URL::previous() }}" role="button">Назад</a>
                             <div class="float-right">
                                 <h3 class="mb-0">Рахунок №{{ $invoice->number}}</h3>
 
