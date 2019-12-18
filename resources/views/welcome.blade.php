@@ -81,11 +81,12 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Особистий кабінет
+                    Особистий кабінет Енергосервіс плюс
                 </div>
 
                 <div class="links">
-                    <a href="/home">Домашня</a>
+                    <a href="/home">Кабінет</a>
+                    <a href="http://www.energosp.com.ua/">Сайт Енергосервіс плюс</a>
 
                 </div>
             </div>
