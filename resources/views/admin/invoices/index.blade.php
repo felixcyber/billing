@@ -20,8 +20,8 @@
     <div class="container">
         <div class="card">
             <div class="card-header">
-                <!-- <strong>01/01/01/2018</strong>
-            <span class="float-right"> <strong>Status:</strong> Pending</span>-->
+                {{-- <strong>01/01/01/2018</strong>
+            <span class="float-right"> <strong>Status:</strong> Pending</span>--}}
                 <a class="btn btn-success" href="{{ route("invoices.create") }}">
                     Новий рахунок
                 </a>
@@ -36,8 +36,8 @@
                                 <th class="center">Компанія</th>
                                 <th class="center">Номер</th>
                                 <th class="center">Дата</th>
-                                <!-- <th class="center">Обсяг споживання</th>-->
-                                <!-- <th class="center">Тариф</th>-->
+                                {{-- <th class="center">Обсяг споживання</th>--}}
+                                {{-- <th class="center">Тариф</th>--}}
                                 <th class="center">Нараховано</th>
                                 <th class="center">Сплачено</th>
                                 <th class="center">Дії</th>
@@ -52,22 +52,22 @@
                                 </td>
                                 <td>{{$invoice->number}}</td>
                                 <td>{{$invoice->date}}</td>
-                                
-                                <!-- <td>{{$invoice->date_end}}</td> -->
-                                <!-- <td>{{$invoice->balance_start}}</td>-->
-                                <!-- <td>{{$invoice->consumption_volume}}</td>-->
-                                <!-- <td>{{number_format($invoice->tariff_estimated, 2, ',', ' ')}}</td>-->
-                                <!-- <td>{{$invoice->tariff_transmission}}</td>-->
-                                <!-- <td>{{$invoice->tariff_distribution}}</td>-->
+
+                                {{--  <td>{{$invoice->date_end}}</td> --}} 
+                                {{-- <td>{{$invoice->balance_start}}</td>--}}
+                                {{-- <td>{{$invoice->consumption_volume}}</td>--}}
+                                {{-- <td>{{number_format($invoice->tariff_estimated, 2, ',', ' ')}}</td>--}}
+                                {{-- <td>{{$invoice->tariff_transmission}}</td>--}}
+                                {{-- <td>{{$invoice->tariff_distribution}}</td>--}}
                                 <td>{{number_format($invoice->consumption_cost, 2, ',', ' ')}}</td>
                                 <td>{{number_format($invoice->paid_summ, 2, ',', ' ')}}</td>
-                                <!-- <td>{{$invoice->consumption_actual}}</td>-->
-                                <!-- <td>{{$invoice->cost_actual}}</td>-->
-                                <!-- <td>{{$invoice->balance_end}}</td>-->
+                                {{-- <td>{{$invoice->consumption_actual}}</td>--}}
+                                {{-- <td>{{$invoice->cost_actual}}</td>--}}
+                                {{-- <td>{{$invoice->balance_end}}</td>--}}
 
 
                                 <td>
-                                    <!-- Circle Buttons (Default) -->
+                                    {{-- Circle Buttons (Default) --}}
 
                                     <a href="{{ route('invoices.edit', $invoice->id)}}"
                                         class="btn btn-success btn-circle" data-toggle="tooltip" data-placement="top"
@@ -95,8 +95,8 @@
                     </table>
                 </div>
 
-                <!-- Итоги таблицы -->
-                <!--<div class="row mt-5">
+                {{-- Итоги таблицы --}}
+                {{--<div class="row mt-5">
                     <div class="col-lg-4 col-sm-5">
 
                     </div>
@@ -125,7 +125,7 @@
 
                     </div>
 
-                </div>-->
+                </div>--}}
 
             </div>
         </div>

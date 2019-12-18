@@ -45,8 +45,8 @@
                             <td>{{$company->description}}</td>
 
                             <td>
-                                <!-- Circle Buttons (Default) -->
-
+                                {{-- {{-- Circle Buttons (Default) --}}
+                                
                                 <a href="{{ route('companies.edit', $company->id)}}" class="btn btn-success btn-circle" data-toggle="tooltip" data-placement="top" title="Редагувати">
                                     <i class="fas fa-edit"></i>
                                 </a>
