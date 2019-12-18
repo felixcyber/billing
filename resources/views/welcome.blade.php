@@ -81,7 +81,10 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Особистий кабінет Енергосервіс плюс
+                    Енергосервіс плюс
+                </div>
+                <div>
+                   <h1> Особистий кабінет споживача </h1>
                 </div>
 
                 <div class="links">
